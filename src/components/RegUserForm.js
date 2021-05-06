@@ -100,38 +100,38 @@ function RegUserForm() {
             setPGend(false);
         }
 
-        // if(!PetName.replace(/\s/g, "").length <= 0 && !PetBDate.replace(/\s/g, "").length <= 0 && !PetSpec.replace(/\s/g, "").length <= 0
-        // && !PetBreed.replace(/\s/g, "").length <= 0 && !PetGend.replace(/\s/g, "").length <= 0){
-        //     console.log("User Inputs!\nName: "+PetName+" ")
+        if(!PetName.replace(/\s/g, "").length <= 0 && !PetBDate.replace(/\s/g, "").length <= 0 && !PetSpec.replace(/\s/g, "").length <= 0
+        && !PetBreed.replace(/\s/g, "").length <= 0 && !PetGend.replace(/\s/g, "").length <= 0){
+            console.log("User Inputs!\nName: "+PetName+" ")
 
-        //         e.preventDefault();
-        //         auth.createUserWithEmailAndPassword(
-        //            Email, PassWord
-        //         ).then(user => {
-        //             console.log(user)
-        //             if (!user) return;
-        //             const userRef = fireBaseDB.doc("users/" + user.uid);
-        //             const pettRef = fireBaseDB.doc("pets/" + user.uid);
-        //             const snaps = userRef.get();
+                e.preventDefault();
+                auth.createUserWithEmailAndPassword(
+                   Email, PassWord
+                ).then(user => {
+                    console.log(user)
+                    if (!user) return;
+                    const userRef = fireBaseDB.doc("users/" + user.uid);
+                    const pettRef = fireBaseDB.doc("pets/" + user.uid);
+                    const snaps = userRef.get();
                 
-        //             if (!snaps.exist) {
-        //                 try {
-        //                     userRef.set({
-        //                         FirstName, LastName, Contact, Address, Email, BirthDate, PassWord, Gender, createdAt: new Date(),
-        //                     });
-        //                     pettRef.set({
-        //                         createdAt: new Date(), PetName, PetBDate, PetSpec, PetBreed, PetGend,
+                    if (!snaps.exist) {
+                        try {
+                            userRef.set({
+                                FirstName, LastName, Contact, Address, Email, BirthDate, PassWord, Gender, createdAt: new Date(),
+                            });
+                            pettRef.set({
+                                createdAt: new Date(), PetName, PetBDate, PetSpec, PetBreed, PetGend,
 
-        //                     });
-        //             history.push('/dashboard');
-        //                 } catch (error) {
-        //                     console.log("Error in creating user info", error);
-        //                 }
-        //             }
-        //         }).catch(err => {
+                            });
+                    history.push('/dashboard');
+                        } catch (error) {
+                            console.log("Error in creating user info", error);
+                        }
+                    }
+                }).catch(err => {
                    
-        //         });
-        //     }
+                });
+            }
         }
 
     const showError = () => {
@@ -253,6 +253,12 @@ function RegUserForm() {
                     <div className="pet-reg">
                         <div className="pet-title"><h1>Pet Information </h1></div>
                         <input type="text" name="txt-Anme" placeholder='Name:' className='txt Anme'  ref={petNameRef} id="txtAnme" />
+                        <div  className={errPName ? 'valida sh' : 'valida'}>
+                            <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div>
+                        <input type="number" name="txt-Weig" placeholder='Weight:' className='txt Weig'  ref={petWeightRef} id="txtWeig" />
+                        <div  className={errPName ? 'valida sh' : 'valida'}>
+                            <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div>
+                        <input type="number" name="txt-Heig" placeholder='Height:' className='txt Heig'  ref={petHeightRef} id="txtHeig" />
                         <div  className={errPName ? 'valida sh' : 'valida'}>
                             <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div>
                             <input type="date" name="txt-PDate" placeholder='Birth Date:' ref={petDateRef} className='txt BdatE' id="txtBdate" />
