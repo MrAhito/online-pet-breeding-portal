@@ -260,7 +260,7 @@ function RegUserForm() {
                             <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div>
                         <input type="number" name="txt-Heig" placeholder='Height:' className='txt Heig'  ref={petHeightRef} id="txtHeig" />
                         <div  className={errPName ? 'valida sh' : 'valida'}> */}
-                            <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div>
+                            {/* <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div> */}
                             <input type="date" name="txt-PDate" placeholder='Birth Date:' ref={petDateRef} className='txt BdatE' id="txtBdate" />
                             <div className={errPDate ? 'valida sh' : 'valida'}>
                                 <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div>
