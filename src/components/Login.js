@@ -1,6 +1,5 @@
 import React, { useRef, useState } from 'react'
 import * as aiIcons from 'react-icons/cg'
-import * as FiIcons from 'react-icons/fi'
 import { Link, useHistory } from "react-router-dom";
 import './Login.css'
 import { auth } from '../firebase/firebase';
@@ -42,9 +41,9 @@ function Login() {
                     <form className="form-container">
                         <input type="text" name="email" ref={emailRef} id="txt-email" placeholder="Email Address" className="txt txemail" required />
                         <input type="password" name="pword" ref={passRef} id="txt-pass" placeholder="Password" className="txt txpass" required />
-                        <a href="#" ><span className='validate'>{validate}</span></a>
+                        <p><span className='validate'>{validate}</span></p>
                         <button className="btn btn-submit" id="btn-sub" onClick={login}>Log In</button>
-                        <a href="#">Forgot Password?</a>
+                        <p>Forgot Password?</p>
                         <hr />
                         <Link to='' onClick={sh}>
                             <button className="btn btn-reg">Create New Account</button>

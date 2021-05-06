@@ -234,7 +234,7 @@ function RegUserForm() {
                         <div className={errBday ? 'valida sh' : 'valida'}>
                             <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div>
                         <select name="txt-Gend" onChange={cGend} id="txtGend" ref={genRef} className="txt GenD">
-                            <option value="" selected disabled>Gender:</option>
+                            <option value="" defaultValue disabled>Gender:</option>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
                             <option value="custome">Custom</option>
@@ -261,7 +261,7 @@ function RegUserForm() {
                             <div className={errPDate ? 'valida sh' : 'valida'}>
                                 <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div>
                         <select name="txt-Spec" id="txtSpec" ref={petSpeciRef} className="txt SpeC">
-                            <option value="" selected disabled>Species:</option>
+                            <option value="" defaultValue disabled>Species:</option>
                             <option value="Dog">Dog</option>
                             <option value="Cat">Cat</option>
                             <option value="Rabbit">Rabbit</option>
@@ -270,7 +270,7 @@ function RegUserForm() {
                             <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle>
                         </div>
                     <select name="txt-Bred" id="txtBred" ref={petBreedRef} className="txt BreD">
-                        <option value="" selected disabled>Breed:</option>
+                        <option value="" defaultValue disabled>Breed:</option>
                         <option value="breed1">Breed 1</option>
                         <option value="breed2">Breed 2</option>
                     </select>
@@ -278,7 +278,7 @@ function RegUserForm() {
                         <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle>
                     </div>
                             <select name="txt-Gend" id="txtPGend" ref={petGenderRef} className="txt PgenD">
-                            <option value="" selected disabled>Gender:</option>
+                            <option value="" defaultValue disabled>Gender:</option>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
                         </select>

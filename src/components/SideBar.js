@@ -5,13 +5,12 @@ import * as FiIcons from 'react-icons/fi'
 import * as aiIcons from 'react-icons/cg'
 import { SideBarData } from './SideBarData'
 import { IconContext } from 'react-icons/lib'
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { auth } from '../firebase/firebase';
 
 function SideBar() {
     const [sidebar, setSidebar] = useState(false);
     const showSideBar = () => setSidebar(!sidebar);
-    const history = useHistory();
     return (
         <>
             <IconContext.Provider value={{}}>
