@@ -100,38 +100,38 @@ function RegUserForm() {
             setPGend(false);
         }
 
-        if(!PetName.replace(/\s/g, "").length <= 0 && !PetBDate.replace(/\s/g, "").length <= 0 && !PetSpec.replace(/\s/g, "").length <= 0
-        && !PetBreed.replace(/\s/g, "").length <= 0 && !PetGend.replace(/\s/g, "").length <= 0){
-            console.log("User Inputs!\nName: "+PetName+" ")
+        // if(!PetName.replace(/\s/g, "").length <= 0 && !PetBDate.replace(/\s/g, "").length <= 0 && !PetSpec.replace(/\s/g, "").length <= 0
+        // && !PetBreed.replace(/\s/g, "").length <= 0 && !PetGend.replace(/\s/g, "").length <= 0){
+        //     console.log("User Inputs!\nName: "+PetName+" ")
 
-                e.preventDefault();
-                auth.createUserWithEmailAndPassword(
-                   Email, PassWord
-                ).then(user => {
-                    console.log(user)
-                    if (!user) return;
-                    const userRef = fireBaseDB.doc("users/" + user.uid);
-                    const pettRef = fireBaseDB.doc("pets/" + user.uid);
-                    const snaps = userRef.get();
+        //         e.preventDefault();
+        //         auth.createUserWithEmailAndPassword(
+        //            Email, PassWord
+        //         ).then(user => {
+        //             console.log(user)
+        //             if (!user) return;
+        //             const userRef = fireBaseDB.doc("users/" + user.uid);
+        //             const pettRef = fireBaseDB.doc("pets/" + user.uid);
+        //             const snaps = userRef.get();
                 
-                    if (!snaps.exist) {
-                        try {
-                            userRef.set({
-                                FirstName, LastName, Contact, Address, Email, BirthDate, PassWord, Gender, createdAt: new Date(),
-                            });
-                            pettRef.set({
-                                createdAt: new Date(), PetName, PetBDate, PetSpec, PetBreed, PetGend,
+        //             if (!snaps.exist) {
+        //                 try {
+        //                     userRef.set({
+        //                         FirstName, LastName, Contact, Address, Email, BirthDate, PassWord, Gender, createdAt: new Date(),
+        //                     });
+        //                     pettRef.set({
+        //                         createdAt: new Date(), PetName, PetBDate, PetSpec, PetBreed, PetGend,
 
-                            });
-                    history.push('/dashboard');
-                        } catch (error) {
-                            console.log("Error in creating user info", error);
-                        }
-                    }
-                }).catch(err => {
+        //                     });
+        //             history.push('/dashboard');
+        //                 } catch (error) {
+        //                     console.log("Error in creating user info", error);
+        //                 }
+        //             }
+        //         }).catch(err => {
                    
-                });
-            }
+        //         });
+        //     }
         }
 
     const showError = () => {
@@ -199,12 +199,11 @@ function RegUserForm() {
                 setGender(genDer);
             setGen(false);
         }
-        if(!FirstName.replace(/\s/g, "").length <= 0 && !LastName.replace(/\s/g, "").length <= 0 && !Address.replace(/\s/g, "").length <= 0 
-        && !BirthDate.replace(/\s/g, "").length <= 0 && !PassWord.replace(/\s/g, "").length <= 0 && !Contact.replace(/\s/g, "").length <= 0 
-        && !Email.replace(/\s/g, "").length <= 0 && !Gender.replace(/\s/g, "").length <= 0 ){
+        // if(!FirstName.replace(/\s/g, "").length <= 0 && !LastName.replace(/\s/g, "").length <= 0 && !Address.replace(/\s/g, "").length <= 0 
+        // && !BirthDate.replace(/\s/g, "").length <= 0 && !PassWord.replace(/\s/g, "").length <= 0 && !Contact.replace(/\s/g, "").length <= 0 
+        // && !Email.replace(/\s/g, "").length <= 0 && !Gender.replace(/\s/g, "").length <= 0 ){
             setshowPet(!showPet);
-            console.log(Gender);
-        }
+        // }
     }
     return (
         <>

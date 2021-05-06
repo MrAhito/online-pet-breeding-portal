@@ -19,23 +19,3 @@ const auth = firebase.auth();
 export { auth };
 export { firebaseApp };
 export default db;
-export const createUserInfo = async (user, username, contactnum, birthdate) => {
-    if (!user) return;
-    const userRef = db.doc("users/" + user.uid);
-    const snaps = await userRef.get();
-
-    if (!snaps.exist) {
-        const { email } = user;
-        const { uname } = username;
-        const { contact } = contactnum;
-        const { bdate } = birthdate;
-
-        try {
-            userRef.set({
-                uname, email, contact, bdate, createdAt: new Date(),
-            })
-        } catch (error) {
-            console.log("Error in creating user info", error);
-        }
-    }
-}
