@@ -233,8 +233,7 @@ function RegUserForm() {
                         <input type="date" name="txt-Bdate" placeholder='Birth Date:' ref={bdateRef} className='txt BdatE' id="txtBdate" />
                         <div className={errBday ? 'valida sh' : 'valida'}>
                             <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div>
-                        <select name="txt-Gend" onChange={cGend} id="txtGend" ref={genRef} className="txt GenD">
-                            <option value="" defaultValue disabled>Gender:</option>
+                        <select name="txt-Gend" onChange={cGend} id="txtGend" ref={genRef} className="txt GenD" defaultValue="Gender:" >
                             <option value="male">Male</option>
                             <option value="female">Female</option>
                             <option value="custome">Custom</option>
@@ -278,15 +277,14 @@ function RegUserForm() {
                         <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle>
                     </div>
                             <select name="txt-Gend" id="txtPGend" ref={petGenderRef} className="txt PgenD">
-                            <option value="" defaultValue disabled>Gender:</option>
+                            <option value="" defaultValue='Gender' disabled></option>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
                         </select>
                         <div className={errPGend ? 'valida sh' : 'valida'}>
                             <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle>
                         </div>
-                        <div></div>git config --global user.email "you@example.com"
-                        git config --global user.name "Your Name"
+                        <div></div>
                     </div>
                 </div>
                 <div className="reg-footer">
